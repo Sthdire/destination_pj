@@ -4,7 +4,7 @@ from psycopg2 import OperationalError
 con = psycopg2.connect(
     database="union",
     user="postgres",
-    password="lololo2000",
+    password="rEtyuol44",
     host="localhost",
     port="5432"
 )
@@ -12,15 +12,13 @@ cur = con.cursor()
 
 create_users_table = """
 CREATE TABLE IF NOT EXISTS doc_iform (
-  id SERIAL PRIMARY KEY,
   number_ INTEGER, 
   order_number INTEGER,
   usd_cost INTEGER,
-  rub_cost INTEGER,
-  delivery_time text
+  delivery_time text,
+  rub_cost INTEGER
 )
 """
-
 
 def create_table(connection, table):
     connection.autocommit = True
@@ -31,11 +29,10 @@ def create_table(connection, table):
     except OperationalError as e:
         print(f"The error '{e}' occurred")
 
+create_table(con, create_users_table)
 
-# create_table(con, create_users_table)
 
-
-def save_values(number, order_number, usd_cost, rub_cost, delivery_time):
+def save_values(number, order_number, usd_cost, delivery_time, rub_cost):
     cursor = con.cursor()
     cursor.execute("""
         INSERT INTO doc_iform (number_,order_number,usd_cost,rub_cost,delivery_time) 
