@@ -1,10 +1,14 @@
 import time
-
+import pygsheets
 import gspread
 from db_methods import save_values
 from cb_rf_course import get_rub_value
 
-sa = gspread.service_account()
+gc = pygsheets.authorize(client_secret='client_secret.json')
+
+
+
+"""sa = gspread.service_account()
 sh = sa.open("testy")
 hs = sh.worksheet("com")
 
@@ -22,7 +26,4 @@ for i in range(hs.row_count):
             time.sleep(50)
         save_values(int(hs.acell(A).value), int(hs.acell(B).value), int(hs.acell(C).value), hs.acell(D).value, get_rub_value(int(hs.acell(C).value)))
         print(i)
-
-#код выше работает, но после прохождения части цикла, выдает ошибку
-
-#print(hs.acell('B11').value)
+"""
