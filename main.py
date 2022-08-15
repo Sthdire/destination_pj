@@ -6,14 +6,17 @@ from datetime import date
 from doc_save import save_db_values
 from db_methods import set_user_id
 from db_methods import get_user_id
+from matplot import graf_img
 
 
 
 def autoupdate():
     save_db_values()
+    graf_img()
     while True:
         time.sleep(60)
         save_db_values()
+        graf_img()
     pass
 
 

@@ -19,12 +19,12 @@ def create_database(name_Database, password):
     pass
 
 
-create_database('union', 'lololo2000')
+create_database('union', 'rEtyuol44')
 
 con = psycopg2.connect(
     database='union',
     user="postgres",
-    password='lololo2000',
+    password='rEtyuol44',
     host="localhost",
     port="5432"
 )
