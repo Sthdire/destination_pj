@@ -105,3 +105,10 @@ def get_user_id():
     rows = cursor.fetchall()
     print("successfully got values")
     return rows
+
+def total():
+    total = 0
+    rows = get_values()
+    for row in rows:
+        total += row[3]
+    return total

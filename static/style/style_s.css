@@ -10,9 +10,65 @@ body{
   width: 100%;
   height: 100vh;
 }
+.header{
+  width: 99%;
+  height: 100px;
+  background: darkseagreen;
+  margin: 10px;
+  border: solid 1px black;
+}
+.name__tag{
+  position: relative;
+  width: 400px;
+  height: 50px;
+  left: 100px;
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  top: 50%;
+  transform: translate(0, -50%)
+}
+.link{
+  position: relative;
+  width: 400px;
+  height: 50px;
+  float: right;
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-right: 70px;
+  text-decoration: none;
+  transform: translate(0, -50%)
+
+}
 .graf__block{
   width: 40%;
-  height: 40%;
-  background: url('/static/img/graf.png');
-  overflow: visible;
+  height: 45%;
+  background: url('/static/img/graf.png')center no-repeat;
+  background-size: cover;
+
+}
+.total__block{
+  position: relative;
+  width: 400px;
+  height: 200px;
+  bottom: 450px;
+  border: solid 1px black;
+  float: top;
+  left: 55%;
+  margin: 40px;
+}
+.total__tag{
+  width: 100%;
+  height: 60px;
+  background: black;
+  text-align: center;
+  color: wheat;
+  font-size: 40px;
+}
+.total__count{
+  width: 100%;
+  height: 30px;
+  font-size: 110px;
+
 }

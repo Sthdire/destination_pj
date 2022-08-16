@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 
 from db_methods import get_values
 
+
 def graf_img():
     squares = []
     fig, ax = plt.subplots()
