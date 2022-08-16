@@ -19,12 +19,12 @@ def create_database(name_Database, password):
     pass
 
 
-create_database('union', 'rEtyuol44')
+create_database('union', 'lololo2000')
 
 con = psycopg2.connect(
     database='union',
     user="postgres",
-    password='rEtyuol44',
+    password='lololo2000',
     host="localhost",
     port="5432"
 )
@@ -76,7 +76,6 @@ def save_values(number, order_number, usd_cost, delivery_time, rub_cost):
 def delete_values():
     cursor = con.cursor()
     cursor.execute('truncate table doc_iform')
-    print("successfully delete values")
     pass
 
 
@@ -84,7 +83,6 @@ def get_values():
     cursor = con.cursor()
     cursor.execute("SELECT number_, order_number, usd_cost, rub_cost, delivery_time FROM doc_iform;")
     rows = cursor.fetchall()
-    print("successfully got values")
     return rows
 
 
@@ -95,7 +93,6 @@ def set_user_id(user_id):
             VALUES (%s, %s);
             """, (user_id, ''))
     con.commit()
-    print('user id successfully saved')
     pass
 
 
@@ -103,5 +100,4 @@ def get_user_id():
     cursor = con.cursor()
     cursor.execute("SELECT user_id FROM user_id;")
     rows = cursor.fetchall()
-    print("successfully got values")
     return rows
