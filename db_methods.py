@@ -2,7 +2,7 @@ import psycopg2
 from psycopg2 import OperationalError, sql
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
-
+db_password = 'lololo2000'
 def create_database(name_Database, password):
     connect = psycopg2.connect(dbname='postgres',
                                user='postgres',
@@ -19,14 +19,13 @@ def create_database(name_Database, password):
     pass
 
 
-create_database('union', 'lololo2000')
+create_database('union', db_password)
 
 con = psycopg2.connect(
     database='union',
     user="postgres",
-    password='lololo2000',
+    password=db_password,
     host="localhost",
-    port="5432"
 )
 cur = con.cursor()
 
@@ -93,6 +92,7 @@ def set_user_id(user_id):
             VALUES (%s, %s);
             """, (user_id, ''))
     con.commit()
+    print('success id save')
     pass
 
 
