@@ -1,14 +1,13 @@
 import time
 from threading import Thread
 
-from fastapi import FastAPI
 from starlette.requests import Request
 from starlette.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
 
 from doc_save import save_db_values
 from init import app, UV
-from main import main_bot
+from bot import main_bot
 from matplot import graf_img
 
 templates = Jinja2Templates(directory="templates")
