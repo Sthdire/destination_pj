@@ -2,14 +2,17 @@
   margin: 0;
   padding: 0;
 }
+
 body{
   background: wheat;
 }
+
 .intro{
   position: absolute;
   width: 100%;
   height: 100vh;
 }
+
 .header{
   width: 99%;
   height: 100px;
@@ -17,6 +20,7 @@ body{
   margin: 10px;
   border: solid 1px black;
 }
+
 .name__tag{
   position: relative;
   width: 400px;
@@ -28,6 +32,7 @@ body{
   top: 50%;
   transform: translate(0, -50%)
 }
+
 .link{
   position: relative;
   width: 400px;
@@ -39,8 +44,8 @@ body{
   margin-right: 70px;
   text-decoration: none;
   transform: translate(0, -50%)
-
 }
+
 .mon_block{
   position: relative;
   max-width: 1000px;
@@ -51,13 +56,14 @@ body{
   margin-right: -50%;
   transform: translate(-50%, -50%)
 }
+
 .graf__block{
   width: 500px;
   height: 400px;
   background: url('/static/img/graf.png')center no-repeat;
   background-size: cover;
-
 }
+
 .total__block{
   position: relative;
   width: 400px;
@@ -66,8 +72,9 @@ body{
   border: solid 1px black;
   float: top;
   left: 55%;
-  margin: 40px;
+  margin-left: 40px;
 }
+
 .total__tag{
   width: 100%;
   height: 60px;
@@ -76,9 +83,9 @@ body{
   color: wheat;
   font-size: 40px;
 }
+
 .total__count{
   width: 100%;
   height: 30px;
   font-size: 110px;
-
 }

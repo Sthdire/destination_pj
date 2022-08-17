@@ -9,8 +9,9 @@ from db_methods import set_user_id, get_user_id, get_values
 
 bot = telebot.TeleBot('5266363672:AAEyg1z8QrEwfS31bJUhGybWZs7zpveD7wY')
 
-
+# start bot method
 def main_bot():
+    # listen start command
     @bot.message_handler(commands=['start'])
     def start_handler(message):
         bot.send_message(message.chat.id,
@@ -25,6 +26,7 @@ def main_bot():
             set_user_id(int(user_id))
         pass
 
+    # method for mass mailing when an order is received
     def mass_message():
         while True:
             print('mass_message check')
@@ -43,6 +45,7 @@ def main_bot():
             time.sleep(3600)
         pass
 
+    # start bot
     def start_bot():
         try:
             print('start bot')

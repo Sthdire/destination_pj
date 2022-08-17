@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 
 from db_methods import get_values
 
-
+# graw chart image
 def graf_img():
     squares = []
     fig, ax = plt.subplots()
@@ -17,4 +17,3 @@ def graf_img():
 
     ax.plot(h, squares)
     plt.savefig('static/img/graf', transparent=True)
-

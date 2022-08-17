@@ -5,6 +5,7 @@ from db_methods import save_values
 from db_methods import delete_values
 from cb_rf_course import get_rub_value
 
+# get values from google sheets and save it to database
 def save_db_values():
     delete_values()
 

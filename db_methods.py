@@ -2,7 +2,10 @@ import psycopg2
 from psycopg2 import OperationalError, sql
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
-db_password = 'rEtyuol44'
+# your postgres password
+db_password = 'lololo2000'
+
+# create database union method
 def create_database(name_Database, password):
     connect = psycopg2.connect(dbname='postgres',
                                user='postgres',
@@ -21,6 +24,7 @@ def create_database(name_Database, password):
 
 create_database('union', db_password)
 
+# connect to union database
 con = psycopg2.connect(
     database='union',
     user="postgres",
@@ -29,6 +33,7 @@ con = psycopg2.connect(
 )
 cur = con.cursor()
 
+# union google doc table template
 create_users_table = """
 CREATE TABLE IF NOT EXISTS doc_iform (
   number_ INTEGER,
@@ -39,7 +44,7 @@ CREATE TABLE IF NOT EXISTS doc_iform (
 )
 """
 
-
+# create table method
 def create_table(connection, table):
     connection.autocommit = True
     cursor = connection.cursor()
@@ -51,8 +56,10 @@ def create_table(connection, table):
     pass
 
 
+# create google doc table
 create_table(con, create_users_table)
 
+# union bot.py users id table template
 user_id_table = """
     CREATE TABLE IF NOT EXISTS user_id (
     user_id INTEGER,
@@ -60,8 +67,10 @@ user_id_table = """
     )
     """
 
+# create users id table
 create_table(con, user_id_table)
 
+# save google doc inform method
 def save_values(number, order_number, usd_cost, delivery_time, rub_cost):
     cursor = con.cursor()
     cursor.execute("""
@@ -71,20 +80,20 @@ def save_values(number, order_number, usd_cost, delivery_time, rub_cost):
     con.commit()
     pass
 
-
+# delete google doc inform method
 def delete_values():
     cursor = con.cursor()
     cursor.execute('truncate table doc_iform')
     pass
 
-
+# get google doc inform method
 def get_values():
     cursor = con.cursor()
     cursor.execute("SELECT number_, order_number, usd_cost, rub_cost, delivery_time FROM doc_iform;")
     rows = cursor.fetchall()
     return rows
 
-
+# save users id method
 def set_user_id(user_id):
     cursor = con.cursor()
     cursor.execute("""
@@ -95,16 +104,17 @@ def set_user_id(user_id):
     print('success id save')
     pass
 
-
+# get users id method
 def get_user_id():
     cursor = con.cursor()
     cursor.execute("SELECT user_id FROM user_id;")
     rows = cursor.fetchall()
     return rows
 
+# count total earnings in rubles
 def total():
-    total = 0
+    Total = 0
     rows = get_values()
     for row in rows:
-        total += row[3]
-    return total
+        Total += row[3]
+    return Total
