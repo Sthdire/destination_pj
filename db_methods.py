@@ -2,7 +2,7 @@ import psycopg2
 from psycopg2 import OperationalError, sql
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
-db_password = 'lololo2000'
+db_password = 'rEtyuol44'
 def create_database(name_Database, password):
     connect = psycopg2.connect(dbname='postgres',
                                user='postgres',
